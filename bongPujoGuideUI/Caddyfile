@@ -1,0 +1,13 @@
+# Frontend reverse proxy
+# Replace bongpujoguide.com with your actual domain
+
+bongpujoguide.com {
+    reverse_proxy frontend:80
+    encode gzip
+
+    header {
+        -Server
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+    }
+}
